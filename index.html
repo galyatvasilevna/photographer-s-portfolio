@@ -2,36 +2,37 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" type=" ">
+        <title>Портфолио фотографа</title>
+        <link rel="icon" href="./image/icon.webp" type=" ">
     </head>
     <body>
         <aside class="aside">
-            <img src="" alt="Логотип" class="logo">
+            <img src="./image/logo_white.png" alt="Логотип" class="logo">
             <ul class="menu">
                 <li class="menu-list">
-                    <a href="" class="menu-list_link">Главная</a>
+                    <a href="#header" class="menu-list_link">Главная</a>
                 </li>
                 <li class="menu-list">
-                    <a href="" class="menu-list_link">Портфолио</a>
+                    <a href="#portfolio" class="menu-list_link">Портфолио</a>
                 </li>
                 <li class="menu-list">
-                    <a href="" class="menu-list_link">Об авторе</a>
+                    <a href="#autor" class="menu-list_link">Об авторе</a>
                 </li>
                 <li class="menu-list">
-                    <a href="" class="menu-list_link">Услуги</a>
+                    <a href="#prices" class="menu-list_link">Услуги</a>
                 </li>
                 <li class="menu-list">
-                    <a href="" class="menu-list_link">Контакты</a>
+                    <a href="#contacts" class="menu-list_link">Контакты</a>
                 </li>
             </ul>
         </aside>
-        <header class="header">
+        <header class="header" id="header">
             <h1 class="header-title">Александра Петрова</h1>
             <h2 class="title">Профессиональная фотография для особенных моментов</h2>
             <button class="button">Заказать съемку</button>
         </header>
         <main class="main">
-            <section class="portfolio">
+            <section class="portfolio" id="portfolio">
                 <h2 class="title">Портфолио</h2>
                 <h3 class="title-explanation">Примеры работ в различных жанрах фотографии</h3>
                 <ul class="portfolio-menu">
@@ -45,12 +46,69 @@
                     <li class="portfolio-list">Street</li>
                 </ul>
                 <ul class="gallery">
-                    <li>
-                        <img>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/commission.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/commission.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/commission2.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/events.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/events2.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/events3.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/fashion.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/fashion3.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/fashion4.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/landscapes.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/landscapes2.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/landscapes3.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/landscapes4.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/portrait.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/portrait2.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/Street.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/wedding.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/Street2.webp">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/wedding2.jpg">
+                    </li>
+                    <li class="gallery-list">
+                        <img class="gallery-image" src="./gallery/wedding3.webp">
                     </li>
                 </ul>
             </section>
-            <section class="autor">
+            <section class="autor" id="autor">
                 <h2 class="title">Об авторе</h2>
                 <h3 class="title-explanation">Краткий рассказ о пути в фотографии</h3>
                 <div class="autor-inf">
@@ -85,13 +143,13 @@
                     </div>
                 </div>
             </section>
-            <section class="prices">
+            <section class="prices" id="prices">
                 <h2 class="title">Услуги и цены</h2>
                 <h3 class="title-explanation">Выберите подходящий пакет услуг для желаемой фотосессии</h3>
                 <ul class="prices-menu">
                     <li class="prices-list">
                         <article class="prices-list-card">
-                            <img class="card-image">
+                            <img class="card-image" src="./image/heart.png">
                             <h4 class="card-title">Свадебная съемка</h4>
                             <p class="card-text">
                                 Полный день свадебной съёмки с профессиональной обработкой
@@ -108,7 +166,7 @@
                     </li>
                     <li class="prices-list">
                         <article class="prices-list-card">
-                            <img class="card-image">
+                            <img class="card-image" src="./image/people.png">
                             <h4 class="card-title">Портретная съемка</h4>
                             <p class="card-text">
                                 Индивидуальные и семейные фотосессии в студии или на природе
@@ -125,7 +183,7 @@
                     </li>
                     <li class="prices-list">
                         <article class="prices-list-card">
-                            <img class="card-image">
+                            <img class="card-image" src="./image/suitcase.png">
                             <h4 class="card-title">Коммерческая съемка</h4>
                             <p class="card-text">
                                 Фотосъемка для бизнеса, каталогов, рекламы и соцсетей
@@ -145,7 +203,7 @@
                 <ul class="prices-menu prices-dop-menu">
                     <li class="prices-dop-list">
                         <article class="prices-dop-card">
-                            <img class="dop-card-image">
+                            <img class="dop-card-image" src="./image/clock.png">
                             <h5 class="dop-card-title">Экспресс-обработка</h5>
                             <p class="dop-card-text">Готовность за 3 дня</p>
                             <p class="dop-card-title">+ 15 000 ₽</p>
@@ -153,7 +211,7 @@
                     </li>
                     <li class="prices-dop-list">
                         <article class="prices-dop-card">
-                            <img class="dop-card-image">
+                            <img class="dop-card-image" src="./image/star.png">
                             <h5 class="dop-card-title">Премиум ретушь</h5>
                             <p class="dop-card-text">Глубокая обработка</p>
                             <p class="dop-card-title">+ 10 000 ₽</p>
@@ -161,7 +219,7 @@
                     </li>
                     <li class="prices-dop-list">
                         <article class="prices-dop-card">
-                            <img class="dop-card-image">
+                            <img class="dop-card-image" src="./image/camera.png">
                             <h5 class="dop-card-title">Видеосъемка</h5>
                             <p class="dop-card-text">Видеограф в команде</p>
                             <p class="dop-card-title">+ 50 000 ₽</p>
@@ -169,7 +227,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="contacts">
+            <section class="contacts" id="contacts">
                 <h2 class="title">Контакты</h2>
                 <h3 class="title-explanation">Планируем фотосессию — пишите!</h3>
                 <div class="exposure">
@@ -184,13 +242,16 @@
                         </label>
                         <label class="form-label">
                             <span class="form-text">Телефон</span>
-                            <input type="email" name="tel" required placeholder="+7 (999) 123-45-67">
+                            <input type="tel" name="tel" required placeholder="+7 (999) 123-45-67">
                         </label>
                         <label class="form-label">
                             <span class="form-text">Сообщение *</span>
                             <input type="text" name="message" required placeholder="Расскажите о желаемой фотосессии...">
                         </label>
-                        <button type="button" class="form-button">Отправить сообщение</button>
+                        <button type="button" class="form-button">
+                            <img class="form-button-image" src="./image/sending.png">
+                            Отправить сообщение
+                        </button>
                     </form>
                 </div>
                 <div class="contacts-text">
@@ -204,18 +265,18 @@
                     <h4 class="contacts-text-title">Социальные сети</h4>
                     <ul class="contacts-ul">
                         <li class="contacts-list">
-                            <a href="">
-                                <img class="contacts-image">
+                            <a href="#">
+                                <img class="contacts-image" src="./image/instagram.png">
                             </a>
                         </li>
                         <li class="contacts-list">
-                            <a href="">
-                                <img class="contacts-image">
+                            <a href="#">
+                                <img class="contacts-image" src="./image/facebook.png">
                             </a>
                         </li>
                         <li class="contacts-list">
-                            <a href="">
-                                <img class="contacts-image">
+                            <a href="#">
+                                <img class="contacts-image" src="./image/letter.png">
                             </a>
                         </li>
                     </ul>
@@ -236,7 +297,7 @@
         </main>
         <footer class="footer">
             <div class="clogan">
-                <img class="logo"> 
+                <img class="logo" src="./image/logo_white.png"> 
                 <p class="clogan-text">
                     Профессиональные фотографии, хранящие особенные моменты
                 </p>
@@ -245,19 +306,19 @@
                 <p class="navigation-text">Навигация</p>
                 <ul class="menu">
                     <li class="menu-list">
-                        <a href="" class="menu-list_link">Главная</a>
+                        <a href="#header" class="menu-list_link">Главная</a>
                     </li>
                     <li class="menu-list">
-                         <a href="" class="menu-list_link">Портфолио</a>
+                         <a href="#portfolio" class="menu-list_link">Портфолио</a>
                     </li>
                    <li class="menu-list">
-                        <a href="" class="menu-list_link">Об авторе</a>
+                        <a href="#autor" class="menu-list_link">Об авторе</a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list_link">Услуги</a>
+                        <a href="#prices" class="menu-list_link">Услуги</a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list_link">Контакты</a>
+                        <a href="#contacts" class="menu-list_link">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -278,18 +339,18 @@
                 </ul>
                 <ul class="footer-contacts-link">
                     <li class="footer-link">
-                        <a class="" href="">
-                            <img>
+                        <a class="" href="#">
+                            <img src="./image/instagram.png">
                         </a>
                     </li>
                     <li class="footer-link">
-                        <a class="" href="">
-                            <img>
+                        <a class="" href="#">
+                            <img src="./image/facebook.png">
                         </a>
                     </li>
                     <li class="footer-link">
-                        <a class="" href="">
-                            <img>
+                        <a class="" href="#">
+                            <img src="./image/letter.png">
                         </a>
                     </li>
                 </ul>
