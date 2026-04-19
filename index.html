@@ -1,13 +1,318 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Портфолио фотографа</title>
-        <link rel="icon" href="./image/icon.webp" type=" ">
-    </head>
-    <body>
-        <aside class="aside">
-            <img src="./image/logo_white.png" alt="Логотип" class="logo">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Портфолио фотографа</title>
+    <link rel="icon" href="./image/icon.webp" type="image/webp" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./style/globals.css" />
+    <link rel="stylesheet" href="./style/variables.css" />
+    <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/portfolio.css" />
+    <link rel="stylesheet" href="./style/author.css" />
+    <link rel="stylesheet" href="./style/prices.css" />
+    <link rel="stylesheet" href="./style/contacts.css" />
+</head>
+<body>
+    <aside class="aside">
+        <img src="./image/logo_white.png" alt="Логотип" class="logo" />
+        <ul class="menu">
+            <li class="menu-list">
+                <a href="#header" class="menu-list_link">Главная</a>
+            </li>
+            <li class="menu-list">
+                <a href="#portfolio" class="menu-list_link">Портфолио</a>
+            </li>
+            <li class="menu-list">
+                <a href="#author" class="menu-list_link">Об авторе</a>
+            </li>
+            <li class="menu-list">
+                <a href="#prices" class="menu-list_link">Услуги</a>
+            </li>
+            <li class="menu-list">
+                <a href="#contacts" class="menu-list_link">Контакты</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header class="header" id="header">
+        <h1 class="header-title">Александра Петрова</h1>
+        <h2 class="header-subtitle">Профессиональная фотография для особенных моментов</h2>
+        <button class="header-button">Заказать съемку</button>
+    </header>
+
+    <main class="main">
+        <section class="section portfolio" id="portfolio">
+            <h2 class="title section-title">Портфолио</h2>
+            <h3 class="title-explanation">Примеры работ в различных жанрах фотографии</h3>
+            <ul class="portfolio-menu">
+                <li class="portfolio-list"><button class="portfolio-list-button">Все работы</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Свадьба</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Портреты</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Fashion</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">События</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Коммерция</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Пейзажи</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button">Street</button></li>
+            </ul>
+            <ul class="gallery">
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/commission.jpg" alt="Коммерческая съемка 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/commission.webp" alt="Коммерческая съемка 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/events.jpg" alt="Событийная съемка 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/events3.jpg" alt="Событийная съемка 3" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/fashion.jpg" alt="Fashion съемка 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/fashion3.jpg" alt="Fashion съемка 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/fashion4.jpg" alt="Fashion съемка 3" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/landscapes.jpg" alt="Пейзаж 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/landscapes2.jpg" alt="Пейзаж 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/landscapes3.jpg" alt="Пейзаж 3" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/landscapes4.jpg" alt="Пейзаж 4" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/portrait.webp" alt="Портрет 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/portrait2.webp" alt="Портрет 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/Street.webp" alt="Street фотография 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/wedding.webp" alt="Свадебная съемка 1" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/Street2.webp" alt="Street фотография 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/wedding2.jpg" alt="Свадебная съемка 2" />
+                </li>
+                <li class="gallery-list">
+                    <img class="gallery-image" src="./gallery/wedding3.webp" alt="Свадебная съемка 3" />
+                </li>
+            </ul>
+        </section>
+
+        <section class="section autor" id="author">
+            <h2 class="title section-title">Об авторе</h2>
+            <h3 class="title-explanation">Краткий рассказ о пути в фотографии</h3>
+            <div class="author-inf">
+                <img class="author-image" src="./image/autor.png" alt="Александра Петрова, фотограф" />
+                <div class="author-name">
+                    <h4 class="author-title">Александра Петрова</h4>
+                    <p class="author-text">
+                        Привет! Я профессиональный фотограф с 8-летним опытом 
+                        работы в различных жанрах фотографии. Моя страсть к 
+                        визуальному искусству началась в университете, где я 
+                        изучала визуальные коммуникации.
+                    </p>
+                    <p class="author-text">
+                        За годы работы я специализировалась на свадебной, портретной 
+                        и коммерческой фотографии. Каждая съемка для меня — это 
+                        возможность рассказать уникальную историю через объектив камеры.
+                    </p>
+                    <p class="author-text">
+                        Мои работы публиковались в ведущих российских журналах, а также 
+                        участвовали в международных фотовыставках. Я постоянно совершенствую 
+                        свои навыки, посещая мастер-классы и следя за современными трендами 
+                        в фотоискусстве.
+                    </p>
+                    <h5 class="author-achievements">Достижения:</h5>
+                    <ul class="author-ul">
+                        <li class="author-list">Победитель Russian Wedding Awards 2023</li>
+                        <li class="author-list">Более 200 проведенных свадебных съемок</li>
+                        <li class="author-list">Сотрудничество с ведущими брендами</li>
+                        <li class="author-list">Публикации в Vogue, Elle, Harper's Bazaar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section prices" id="prices">
+            <h2 class="title section-title">Услуги и цены</h2>
+            <h3 class="title-explanation">Выберите подходящий пакет услуг для желаемой фотосессии</h3>
+            <ul class="prices-menu">
+                <li class="prices-list">
+                    <article class="prices-list-card">
+                        <img class="card-image" src="./image/heart.png" alt="Иконка сердца" />
+                        <h4 class="card-title">Свадебная съемка</h4>
+                        <p class="card-text">
+                            Полный день свадебной съёмки с профессиональной обработкой
+                        </p>
+                        <p class="card-price">от 80 000 ₽</p>
+                        <ul class="card-services">
+                            <li class="card-list">Полный день съемки (10-12 часов)</li>
+                            <li class="card-list">Второй фотограф</li>
+                            <li class="card-list">500+ обработанных фото</li>
+                            <li class="card-list">Готовность через 3 недели</li>
+                        </ul>
+                        <button class="card-button">Заказать</button>
+                    </article>
+                </li>
+                <li class="prices-list">
+                    <article class="prices-list-card">
+                        <img class="card-image" src="./image/people.png" alt="Иконка людей" />
+                        <h4 class="card-title">Портретная съемка</h4>
+                        <p class="card-text">
+                            Индивидуальные и семейные фотосессии в студии или на природе
+                        </p>
+                        <p class="card-price">от 15 000 ₽</p>
+                        <ul class="card-services">
+                            <li class="card-list">2 часа съемки</li>
+                            <li class="card-list">Выбор локации</li>
+                            <li class="card-list">50+ обработанных фото</li>
+                            <li class="card-list">Готовность через 1 неделю</li>
+                        </ul>
+                        <button class="card-button">Заказать</button>
+                    </article>
+                </li>
+                <li class="prices-list">
+                    <article class="prices-list-card">
+                        <img class="card-image" src="./image/suitcase.png" alt="Иконка чемодана" />
+                        <h4 class="card-title">Коммерческая съемка</h4>
+                        <p class="card-text">
+                            Фотосъемка для бизнеса, каталогов, рекламы и соцсетей
+                        </p>
+                        <p class="card-price">от 25 000 ₽</p>
+                        <ul class="card-services">
+                            <li class="card-list">Индивидуальный подход</li>
+                            <li class="card-list">Профессиональная студия</li>
+                            <li class="card-list">Ретушь и цветокоррекция</li>
+                            <li class="card-list">Коммерческие права</li>
+                        </ul>
+                        <button class="card-button">Заказать</button>
+                    </article>
+                </li>
+            </ul>
+            <h4 class="prices-title">Дополнительные услуги</h4>
+            <ul class="prices-menu prices-dop-menu">
+                <li class="prices-dop-list">
+                    <article class="prices-dop-card">
+                        <img class="dop-card-image" src="./image/clock.png" alt="Иконка часов" />
+                        <h5 class="dop-card-title">Экспресс-обработка</h5>
+                        <p class="dop-card-text">Готовность за 3 дня</p>
+                        <p class="dop-card-price">+ 15 000 ₽</p>
+                    </article>
+                </li>
+                <li class="prices-dop-list">
+                    <article class="prices-dop-card">
+                        <img class="dop-card-image" src="./image/star.png" alt="Иконка звезды" />
+                        <h5 class="dop-card-title">Премиум ретушь</h5>
+                        <p class="dop-card-text">Глубокая обработка</p>
+                        <p class="dop-card-price">+ 10 000 ₽</p>
+                    </article>
+                </li>
+                <li class="prices-dop-list">
+                    <article class="prices-dop-card">
+                        <img class="dop-card-image" src="./image/camera.png" alt="Иконка камеры" />
+                        <h5 class="dop-card-title">Видеосъемка</h5>
+                        <p class="dop-card-text">Видеограф в команде</p>
+                        <p class="dop-card-price">+ 50 000 ₽</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section contacts" id="contacts">
+            <h2 class="title section-title">Контакты</h2>
+            <h3 class="title-explanation">Планируем фотосессию — пишите!</h3>
+            <div class="exposure">
+                <form class="form" action="#" method="post">
+                    <label class="form-label">
+                        <span class="form-text">Ваше имя *</span>
+                        <input type="text" name="name" required placeholder="Иван Иванов" />
+                    </label>
+                    <label class="form-label">
+                        <span class="form-text">Email *</span>
+                        <input type="email" name="email" required placeholder="ivan@email.com" />
+                    </label>
+                    <label class="form-label">
+                        <span class="form-text">Телефон</span>
+                        <input type="tel" name="tel" placeholder="+7 (999) 123-45-67" />
+                    </label>
+                    <label class="form-label">
+                        <span class="form-text">Сообщение *</span>
+                        <textarea name="message" required placeholder="Расскажите о желаемой фотосессии..."></textarea>
+                    </label>
+                    <button type="submit" class="form-button">
+                        <img class="form-button-image" src="./image/sending.png" alt="Иконка отправки" />
+                        Отправить сообщение
+                    </button>
+                </form>
+            </div>
+            <div class="contacts-text">
+                <h4 class="contacts-text-title">Контактная информация</h4>
+                <p class="contacts-text-max">Телефон</p>
+                <p class="contacts-text-min">+7 (999) 123-45-67</p>
+                <p class="contacts-text-max">Email</p>
+                <p class="contacts-text-min">info@photostudio.ru</p>
+                <p class="contacts-text-max">Адрес студии</p>
+                <p class="contacts-text-min">г. Москва, ул. Примерная, 123 Метро Маяковская</p>
+                
+                <h4 class="contacts-text-title">Социальные сети</h4>
+                <ul class="contacts-ul">
+                    <li class="contacts-list">
+                        <a href="#" aria-label="Instagram">
+                            <img class="contacts-image" src="./image/instagram.png" alt="Instagram" />
+                        </a>
+                    </li>
+                    <li class="contacts-list">
+                        <a href="#" aria-label="Facebook">
+                            <img class="contacts-image" src="./image/facebook.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <li class="contacts-list">
+                        <a href="#" aria-label="Email">
+                            <img class="contacts-image" src="./image/letter.png" alt="Email" />
+                        </a>
+                    </li>
+                </ul>
+                <p class="contacts-text-p">
+                    Подписывайтесь на наши социальные сети, чтобы следить 
+                    за новыми работами и получать вдохновение!
+                </p>
+                <div class="time">
+                    <h4 class="time-title">Режим работы</h4>
+                    <p class="time-text">Понедельник - Пятница: 10:00 - 20:00</p>
+                    <p class="time-text">Суббота - Воскресенье: 11:00 - 18:00</p>
+                    <p class="time-text time-dop">
+                        * Съемки возможны в любое время по предварительной договоренности
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="clogan">
+            <img class="logo" src="./image/logo_white.png" alt="Логотип" /> 
+            <p class="clogan-text">
+                Профессиональные фотографии, хранящие особенные моменты
+            </p>
+        </div>
+        <div class="navigation">
+            <p class="navigation-text">Навигация</p>
             <ul class="menu">
                 <li class="menu-list">
                     <a href="#header" class="menu-list_link">Главная</a>
@@ -16,7 +321,7 @@
                     <a href="#portfolio" class="menu-list_link">Портфолио</a>
                 </li>
                 <li class="menu-list">
-                    <a href="#autor" class="menu-list_link">Об авторе</a>
+                    <a href="#author" class="menu-list_link">Об авторе</a>
                 </li>
                 <li class="menu-list">
                     <a href="#prices" class="menu-list_link">Услуги</a>
@@ -25,341 +330,46 @@
                     <a href="#contacts" class="menu-list_link">Контакты</a>
                 </li>
             </ul>
-        </aside>
-        <header class="header" id="header">
-            <h1 class="header-title">Александра Петрова</h1>
-            <h2 class="title">Профессиональная фотография для особенных моментов</h2>
-            <button class="button">Заказать съемку</button>
-        </header>
-        <main class="main">
-            <section class="portfolio" id="portfolio">
-                <h2 class="title">Портфолио</h2>
-                <h3 class="title-explanation">Примеры работ в различных жанрах фотографии</h3>
-                <ul class="portfolio-menu">
-                    <li class="portfolio-list">Все работы</li>
-                    <li class="portfolio-list">Свадьба</li>
-                    <li class="portfolio-list">Портреты</li>
-                    <li class="portfolio-list">Fashion</li>
-                    <li class="portfolio-list">События</li>
-                    <li class="portfolio-list">Коммерция</li>
-                    <li class="portfolio-list">Пейзажи</li>
-                    <li class="portfolio-list">Street</li>
-                </ul>
-                <ul class="gallery">
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/commission.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/commission.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/commission2.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/events.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/events2.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/events3.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/fashion.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/fashion3.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/fashion4.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/landscapes.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/landscapes2.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/landscapes3.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/landscapes4.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/portrait.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/portrait2.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/Street.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/wedding.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/Street2.webp">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/wedding2.jpg">
-                    </li>
-                    <li class="gallery-list">
-                        <img class="gallery-image" src="./gallery/wedding3.webp">
-                    </li>
-                </ul>
-            </section>
-            <section class="autor" id="autor">
-                <h2 class="title">Об авторе</h2>
-                <h3 class="title-explanation">Краткий рассказ о пути в фотографии</h3>
-                <div class="autor-inf">
-                    <img class="autor-image">
-                    <div class="autor-name">
-                        <h4 class="autor-title">Александра Петрова</h4>
-                        <p class="autor-text">
-                            Привет! Я профессиональный фотограф с 8-летним опытом 
-                            работы в различных жанрах фотографии. Моя страсть к 
-                            визуальному искусству началась в университете, где я 
-                            изучала визуальные коммуникации.
-                        </p>
-                        <p class="autor-text">
-                            За годы работы я специализировалась на свадебной, портретной 
-                            и коммерческой фотографии. Каждая съемка для меня — это 
-                            возможность рассказать уникальную историю через объектив камеры.
-                        </p>
-                        <p class="autor-text">
-                            Мои работы публиковались в ведущих российских журналах, а также 
-                            участвовали в международных фотовыставках. Я постоянно совершенствую 
-                            свои навыки, посещая мастер-классы и следя за современными трендами 
-                            в фотоискусстве.
-                        </p>
-
-                        <h5 class="autor-achievements">Достижения:</h5>
-                        <ul class="autor-ul">
-                            <li class="autor-list">Победитель Russian Wedding Awards 2023</li>
-                            <li class="autor-list">Более 200 проведенных свадебных съемок</li>
-                            <li class="autor-list">Сотрудничество с ведущими брендами</li>
-                            <li class="autor-list">Публикации в Vogue, Elle, Harper's Bazaar</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="prices" id="prices">
-                <h2 class="title">Услуги и цены</h2>
-                <h3 class="title-explanation">Выберите подходящий пакет услуг для желаемой фотосессии</h3>
-                <ul class="prices-menu">
-                    <li class="prices-list">
-                        <article class="prices-list-card">
-                            <img class="card-image" src="./image/heart.png">
-                            <h4 class="card-title">Свадебная съемка</h4>
-                            <p class="card-text">
-                                Полный день свадебной съёмки с профессиональной обработкой
-                            </p>
-                            <p class="card-price">от 80 000 ₽</p>
-                            <ul class="card-services">
-                                <li class="card-list">Полный день съемки (10-12 часов)</li>
-                                <li class="card-list">Второй фотограф</li>
-                                <li class="card-list">500+ обработанных фото</li>
-                                <li class="card-list">Готовность через 3 недели</li>
-                            </ul>
-                            <button class="card-button">Заказать</button>
-                        </article>
-                    </li>
-                    <li class="prices-list">
-                        <article class="prices-list-card">
-                            <img class="card-image" src="./image/people.png">
-                            <h4 class="card-title">Портретная съемка</h4>
-                            <p class="card-text">
-                                Индивидуальные и семейные фотосессии в студии или на природе
-                            </p>
-                            <p class="card-price">от 15 000 ₽</p>
-                            <ul class="card-services">
-                                <li class="card-list">2 часа съемки</li>
-                                <li class="card-list">Выбор локации</li>
-                                <li class="card-list">50+ обработанных фото</li>
-                                <li class="card-list">Готовность через 1 неделю</li>
-                            </ul>
-                            <button class="card-button">Заказать</button>
-                        </article>
-                    </li>
-                    <li class="prices-list">
-                        <article class="prices-list-card">
-                            <img class="card-image" src="./image/suitcase.png">
-                            <h4 class="card-title">Коммерческая съемка</h4>
-                            <p class="card-text">
-                                Фотосъемка для бизнеса, каталогов, рекламы и соцсетей
-                            </p>
-                            <p class="card-price">от 25 000 ₽</p>
-                            <ul class="card-services">
-                                <li class="card-list">Индивидуальный подход</li>
-                                <li class="card-list">Профессиональная студия</li>
-                                <li class="card-list">Ретушь и цветокоррекция</li>
-                                <li class="card-list">Коммерческие права</li>
-                            </ul>
-                            <button class="card-button">Заказать</button>
-                        </article>
-                    </li>
-                </ul>
-                <h4 class="prices-title">Дополнительные услуги</h4>
-                <ul class="prices-menu prices-dop-menu">
-                    <li class="prices-dop-list">
-                        <article class="prices-dop-card">
-                            <img class="dop-card-image" src="./image/clock.png">
-                            <h5 class="dop-card-title">Экспресс-обработка</h5>
-                            <p class="dop-card-text">Готовность за 3 дня</p>
-                            <p class="dop-card-title">+ 15 000 ₽</p>
-                        </article>
-                    </li>
-                    <li class="prices-dop-list">
-                        <article class="prices-dop-card">
-                            <img class="dop-card-image" src="./image/star.png">
-                            <h5 class="dop-card-title">Премиум ретушь</h5>
-                            <p class="dop-card-text">Глубокая обработка</p>
-                            <p class="dop-card-title">+ 10 000 ₽</p>
-                        </article>
-                    </li>
-                    <li class="prices-dop-list">
-                        <article class="prices-dop-card">
-                            <img class="dop-card-image" src="./image/camera.png">
-                            <h5 class="dop-card-title">Видеосъемка</h5>
-                            <p class="dop-card-text">Видеограф в команде</p>
-                            <p class="dop-card-title">+ 50 000 ₽</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
-            <section class="contacts" id="contacts">
-                <h2 class="title">Контакты</h2>
-                <h3 class="title-explanation">Планируем фотосессию — пишите!</h3>
-                <div class="exposure">
-                    <form class="form">
-                        <label class="form-label">
-                            <span class="form-text">Ваше имя *</span>
-                            <input type="text" name="name" required placeholder="Иван Иванов">
-                        </label>
-                        <label class="form-label">
-                            <span class="form-text">Email *</span>
-                            <input type="email" name="email" required placeholder="ivan@email.com">
-                        </label>
-                        <label class="form-label">
-                            <span class="form-text">Телефон</span>
-                            <input type="tel" name="tel" required placeholder="+7 (999) 123-45-67">
-                        </label>
-                        <label class="form-label">
-                            <span class="form-text">Сообщение *</span>
-                            <input type="text" name="message" required placeholder="Расскажите о желаемой фотосессии...">
-                        </label>
-                        <button type="button" class="form-button">
-                            <img class="form-button-image" src="./image/sending.png">
-                            Отправить сообщение
-                        </button>
-                    </form>
-                </div>
-                <div class="contacts-text">
-                    <h4 class="contacts-text-title">Контактная информация</h4>
-                    <p class="contacts-text-max">Телефон</p>
-                    <p class="contacts-text-min">+7 (999) 123-45-67</p>
-                    <p class="contacts-text-max">Email</p>
-                    <p class="contacts-text-min">info@photostudio.ru</p>
-                    <p class="contacts-text-max">Адрес студии</p>
-                    <p class="contacts-text-min">г. Москва, ул. Примерная, 123 Метро Маяковская</p>
-                    <h4 class="contacts-text-title">Социальные сети</h4>
-                    <ul class="contacts-ul">
-                        <li class="contacts-list">
-                            <a href="#">
-                                <img class="contacts-image" src="./image/instagram.png">
-                            </a>
-                        </li>
-                        <li class="contacts-list">
-                            <a href="#">
-                                <img class="contacts-image" src="./image/facebook.png">
-                            </a>
-                        </li>
-                        <li class="contacts-list">
-                            <a href="#">
-                                <img class="contacts-image" src="./image/letter.png">
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="contacts-text-p">
-                        Подписывайтесь на наши социальные сети, чтобы следить 
-                        за новыми работами и получать вдохновение!
-                    </p>
-                    <div class="time">
-                        <h4 class="time-title">Режим работы</h4>
-                        <p class="time-text">Понедельник - Пятница: 10:00 - 20:00</p>
-                        <p class="time-text">Суббота - Воскресенье: 11:00 - 18:00</p>
-                        <p class="time-text time-dop">
-                            * Съемки возможны в любое время по предварительной договоренности
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="clogan">
-                <img class="logo" src="./image/logo_white.png"> 
-                <p class="clogan-text">
-                    Профессиональные фотографии, хранящие особенные моменты
-                </p>
-            </div>
-            <div class="navigation">
-                <p class="navigation-text">Навигация</p>
-                <ul class="menu">
-                    <li class="menu-list">
-                        <a href="#header" class="menu-list_link">Главная</a>
-                    </li>
-                    <li class="menu-list">
-                         <a href="#portfolio" class="menu-list_link">Портфолио</a>
-                    </li>
-                   <li class="menu-list">
-                        <a href="#autor" class="menu-list_link">Об авторе</a>
-                    </li>
-                    <li class="menu-list">
-                        <a href="#prices" class="menu-list_link">Услуги</a>
-                    </li>
-                    <li class="menu-list">
-                        <a href="#contacts" class="menu-list_link">Контакты</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="services">
-                <h5 class="services-title">Услуги</h5>
-                <ul class="services-ul">
-                    <li class="services-list">Свадебная съемка</li>
-                    <li class="services-list">Портретная съемка</li>
-                    <li class="services-list">Коммерческая съемка</li>
-                    <li class="services-list">Событийная фотография</li>
-                </ul>
-            </div>
-            <div class="footer-contacts">
-                <ul class="footer-contacts-text">
-                    <li class="footer-contacts-list">+7 (999) 123-45-67</li>
-                    <li class="footer-contacts-list">info@photostudio.ru</li>
-                    <li class="footer-contacts-list">г. Москва</li>
-                </ul>
-                <ul class="footer-contacts-link">
-                    <li class="footer-link">
-                        <a class="" href="#">
-                            <img src="./image/instagram.png">
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a class="" href="#">
-                            <img src="./image/facebook.png">
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a class="" href="#">
-                            <img src="./image/letter.png">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-        <div class="info">
-            <p class="info-text">© 2026 PhotoStudio. Все права защищены.</p>
-            <a class="info-link">Политика конфиденциальности</a>
-            <a class="info-link">Пользовательское соглашение</a>
         </div>
-    </body>
+        <div class="services">
+            <h5 class="services-title">Услуги</h5>
+            <ul class="services-ul">
+                <li class="services-list">Свадебная съемка</li>
+                <li class="services-list">Портретная съемка</li>
+                <li class="services-list">Коммерческая съемка</li>
+                <li class="services-list">Событийная фотография</li>
+            </ul>
+        </div>
+        <div class="footer-contacts">
+            <ul class="footer-contacts-text">
+                <li class="footer-contacts-list">+7 (999) 123-45-67</li>
+                <li class="footer-contacts-list">info@photostudio.ru</li>
+                <li class="footer-contacts-list">г. Москва</li>
+            </ul>
+            <ul class="footer-contacts-link">
+                <li class="footer-link">
+                    <a href="#" aria-label="Instagram">
+                        <img src="./image/instagram.png" alt="Instagram" />
+                    </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#" aria-label="Facebook">
+                        <img src="./image/facebook.png" alt="Facebook" />
+                    </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#" aria-label="Email">
+                        <img src="./image/letter.png" alt="Email" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="info">
+        <p class="info-text">© 2026 PhotoStudio. Все права защищены.</p>
+        <a href="#" class="info-link">Политика конфиденциальности</a>
+        <a href="#" class="info-link">Пользовательское соглашение</a>
+    </div>
+</body>
 </html>
