@@ -1,0 +1,27 @@
+@font-face {
+    src: url(./Montserrat-Bold.ttf) format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    src: url(./Montserrat-Medium.ttf) format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    src: url(./Montserrat-SemiBold.ttf) format('truetype');
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    src: url(./OpenSans.ttf) format('truetype');
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-display: swap;
+}
