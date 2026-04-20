@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/author.css" />
     <link rel="stylesheet" href="./style/prices.css" />
     <link rel="stylesheet" href="./style/contacts.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
 </head>
 <body>
     <aside class="aside">
@@ -206,7 +207,7 @@
                 </li>
             </ul>
             <h4 class="prices-title">Дополнительные услуги</h4>
-            <ul class="prices-menu prices-dop-menu">
+            <ul class="prices-dop-menu">
                 <li class="prices-dop-list">
                     <article class="prices-dop-card">
                         <img class="dop-card-image" src="./image/clock.png" alt="Иконка часов" />
@@ -241,64 +242,64 @@
                 <form class="form" action="#" method="post">
                     <label class="form-label">
                         <span class="form-text">Ваше имя *</span>
-                        <input type="text" name="name" required placeholder="Иван Иванов" />
+                        <input class="input" type="text" name="name" required placeholder="Иван Иванов" />
                     </label>
                     <label class="form-label">
                         <span class="form-text">Email *</span>
-                        <input type="email" name="email" required placeholder="ivan@email.com" />
+                        <input class="input" type="email" name="email" required placeholder="ivan@email.com" />
                     </label>
                     <label class="form-label">
                         <span class="form-text">Телефон</span>
-                        <input type="tel" name="tel" placeholder="+7 (999) 123-45-67" />
+                        <input class="input" type="tel" name="tel" placeholder="+7 (999) 123-45-67" />
                     </label>
                     <label class="form-label">
                         <span class="form-text">Сообщение *</span>
-                        <textarea name="message" required placeholder="Расскажите о желаемой фотосессии..."></textarea>
+                        <textarea class="textarea" name="message" required placeholder="Расскажите о желаемой фотосессии..."></textarea>
                     </label>
                     <button type="submit" class="form-button">
                         <img class="form-button-image" src="./image/sending.png" alt="Иконка отправки" />
                         Отправить сообщение
                     </button>
                 </form>
-            </div>
-            <div class="contacts-text">
-                <h4 class="contacts-text-title">Контактная информация</h4>
-                <p class="contacts-text-max">Телефон</p>
-                <p class="contacts-text-min">+7 (999) 123-45-67</p>
-                <p class="contacts-text-max">Email</p>
-                <p class="contacts-text-min">info@photostudio.ru</p>
-                <p class="contacts-text-max">Адрес студии</p>
-                <p class="contacts-text-min">г. Москва, ул. Примерная, 123 Метро Маяковская</p>
-                
-                <h4 class="contacts-text-title">Социальные сети</h4>
-                <ul class="contacts-ul">
-                    <li class="contacts-list">
-                        <a href="#" aria-label="Instagram">
-                            <img class="contacts-image" src="./image/instagram.png" alt="Instagram" />
-                        </a>
-                    </li>
-                    <li class="contacts-list">
-                        <a href="#" aria-label="Facebook">
-                            <img class="contacts-image" src="./image/facebook.png" alt="Facebook" />
-                        </a>
-                    </li>
-                    <li class="contacts-list">
-                        <a href="#" aria-label="Email">
-                            <img class="contacts-image" src="./image/letter.png" alt="Email" />
-                        </a>
-                    </li>
-                </ul>
-                <p class="contacts-text-p">
-                    Подписывайтесь на наши социальные сети, чтобы следить 
-                    за новыми работами и получать вдохновение!
-                </p>
-                <div class="time">
-                    <h4 class="time-title">Режим работы</h4>
-                    <p class="time-text">Понедельник - Пятница: 10:00 - 20:00</p>
-                    <p class="time-text">Суббота - Воскресенье: 11:00 - 18:00</p>
-                    <p class="time-text time-dop">
-                        * Съемки возможны в любое время по предварительной договоренности
+                <div class="contacts-text">
+                    <h4 class="contacts-text-title">Контактная информация</h4>
+                    <p class="contacts-text-max">Телефон</p>
+                    <p class="contacts-text-min">+7 (999) 123-45-67</p>
+                    <p class="contacts-text-max">Email</p>
+                    <p class="contacts-text-min">info@photostudio.ru</p>
+                    <p class="contacts-text-max">Адрес студии</p>
+                    <p class="contacts-text-min">г. Москва, ул. Примерная, 123 Метро Маяковская</p>
+                    
+                    <h4 class="contacts-text-title">Социальные сети</h4>
+                    <ul class="contacts-ul">
+                        <li class="contacts-list">
+                            <a href="#" aria-label="Instagram">
+                                <img class="contacts-image" src="./image/instagram.png" alt="Instagram" />
+                            </a>
+                        </li>
+                        <li class="contacts-list">
+                            <a href="#" aria-label="Facebook">
+                                <img class="contacts-image" src="./image/facebook.png" alt="Facebook" />
+                            </a>
+                        </li>
+                        <li class="contacts-list">
+                            <a href="#" aria-label="Email">
+                                <img class="contacts-image" src="./image/letter.png" alt="Email" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="contacts-text-p">
+                        Подписывайтесь на наши социальные сети, чтобы следить 
+                        за новыми работами и получать вдохновение!
                     </p>
+                    <div class="time">
+                        <h4 class="time-title">Режим работы</h4>
+                        <p class="time-text">Понедельник - Пятница: 10:00 - 20:00</p>
+                        <p class="time-text">Суббота - Воскресенье: 11:00 - 18:00</p>
+                        <p class="time-text time-dop">
+                            * Съемки возможны в любое время по предварительной договоренности
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
