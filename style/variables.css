@@ -1,0 +1,27 @@
+:root {
+    --size-h1-page: 70px;
+    --size-h2-page: 22px;
+    --size-h2-section: 40px;
+    --size-h3-section: 16px;
+    --size-text: 16px;
+    --size-card-title: 24px;
+    --size-dop-text: 12px;
+
+    --weight-h1-page: 500;
+    --weight-h2-page: 500;
+    --weight-h2-section: 500;
+    --weight-h3-section: 400;
+    --weight-text: 400;
+
+    --color-h1-page: #fff;
+    --color-h2-page: #f8f9fa;
+    --color-h2-section: #212529;
+    --color-h3-section: #717182;
+    --color-text: #717182;
+    --color-form: #dee2e6;
+
+    --color-accent: #212529;
+    --background-color-accent: #f8f9fa;
+    --color-text-accent: #f8f9fa;
+    --background-color: #fff;
+}

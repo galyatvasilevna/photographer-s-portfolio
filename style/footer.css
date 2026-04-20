@@ -1,0 +1,7 @@
+.footer {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+

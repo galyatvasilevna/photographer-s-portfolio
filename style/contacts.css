@@ -1,0 +1,122 @@
+.contacts {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: var(--color-text);
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exposure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+.form-text {
+    color: var(--color-accent);
+    font-size: var(--size-dop-text);
+}
+
+.input {
+    padding: 15px 5px;
+    margin: 5px 0;
+    width: 100%;
+    border: var(--color-form) solid 1px;
+    border-radius: 10px;
+}
+
+.input:focus {
+    border: var(--color-text) solid 1px;
+}
+
+.textarea {
+    max-width: 100%;
+    padding: 15px 5px;
+    margin: 5px 0;
+    border: var(--color-form) solid 1px;
+    border-radius: 10px;
+    font-size: var(--size-text);
+
+}
+
+.form-button {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 10px;
+    width: 100%;
+    position: relative;
+}
+
+.form-button-image {
+    position: absolute;
+    top: 12px;
+    left: 27%;
+}
+
+.contacts-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacts-text-title {
+    color: var(--color-accent);
+    font-size: var(--size-card-title);
+}
+
+.contacts-text-max {
+    color: var(--color-accent);
+    padding-left: 40px;
+}
+
+.contacts-text-min {
+    padding-left: 40px;
+}
+
+.contacts-ul {
+    display: flex;
+    gap: 20px;
+}
+
+.contacts-text-p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.time {
+    background-color: var(--background-color-accent);
+    padding: 25px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.time-title {
+    color: var(--color-accent);
+}
+
+.time-text {
+    font-size: /*var(--size-dop-text)*/ 14px;
+}
+
+.time-dop {
+    font-size: var(--size-dop-text);
+}
