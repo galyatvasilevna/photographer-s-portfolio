@@ -56,3 +56,43 @@
 .author-list {
     line-height: 1.4;  
 }
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .author {
+        padding: 40px 20px 60px;
+    }
+    
+    .author-inf {
+        gap: 30px;
+    }
+    
+    .author-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .author {
+        padding: 40px 16px 60px;
+    }
+    
+    .author-inf {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .author-name {
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .author-image {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .author-ul {
+        text-align: left;
+        padding-left: 20px;
+    }
+}

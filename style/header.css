@@ -3,14 +3,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    
     position: relative;
     min-height: 100vh;
+    inline-size: 100%;
+}
+
+.header-titles {
     display: flex;
     flex-direction: column;
     justify-content: center;   
     align-items: center;
     gap: 24px;
-    inline-size: 100%;
+    flex: 1 0 auto;
 }
 
 .header::before {
@@ -24,7 +31,7 @@
 }
 
 .header-title,
-.header .title,
+.header-subtitle,
 .header-button {
     position: relative;
     z-index: 2;
@@ -64,4 +71,27 @@
 
 .header-button:hover {
     background-color: var(--background-color-accent);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .header-titles {
+        gap: 20px;
+        padding: 0 30px;
+    }
+    
+    .header-button {
+        padding: 16px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-titles {
+        gap: 16px;
+        padding: 0 20px;
+    }
+    
+    .header-button {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
 }

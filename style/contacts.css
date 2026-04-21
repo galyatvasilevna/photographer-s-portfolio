@@ -40,7 +40,8 @@
     border-radius: 10px;
 }
 
-.input:focus {
+.input:focus, .textarea:focus {
+    outline: none;
     border: var(--color-text) solid 1px;
 }
 
@@ -51,7 +52,7 @@
     border: var(--color-form) solid 1px;
     border-radius: 10px;
     font-size: var(--size-text);
-
+    resize: vertical;
 }
 
 .form-button {
@@ -59,15 +60,17 @@
     color: #fff;
     border: none;
     border-radius: 10px;
-    padding: 20px 10px;
+    padding: 16px 20px 16px 50px;
     width: 100%;
-    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .form-button-image {
-    position: absolute;
-    top: 12px;
-    left: 27%;
+    display: block;
 }
 
 .contacts-text {
@@ -119,4 +122,54 @@
 
 .time-dop {
     font-size: var(--size-dop-text);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .contacts {
+        padding: 50px 20px;
+    }
+    
+    .exposure {
+        gap: 30px;
+        padding: 16px;
+    }
+    
+    .form-button-image {
+        left: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        padding: 40px 16px;
+    }
+    
+    .exposure {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 16px;
+    }
+    
+    .contacts-text {
+        text-align: center;
+    }
+    
+    .contacts-text-max,
+    .contacts-text-min,
+    .contacts-ul,
+    .contacts-text-p {
+        padding-left: 0;
+    }
+    
+    .contacts-ul {
+        justify-content: center;
+    }
+    
+    .time {
+        text-align: center;
+    }
+    
+    .form-button-image {
+        left: 21%;
+    }
 }

@@ -1,0 +1,110 @@
+.aside {
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.3;
+    color: var(--color-h1-page);
+    font-size: var(--size-text);
+    position: relative;
+    z-index: 15;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 20px;
+    background-color: /*rgba(0, 0, 0, 0.1)*/ transparent;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.logo-img {
+    height: 35px;
+    width: auto;
+    transition: all 0.25s ease;
+    display: block;
+}
+
+.logo-default {
+    display: block;
+}
+
+.logo-scrolled {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.aside.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-color-accent);
+    color: var(--color-accent);
+    padding: 1.1rem 20px;
+    box-shadow: 0 4px 18px transparent;
+    animation: slideDown 0.3s ease;
+}
+
+.aside.scrolled .logo-default {
+    display: none;
+}
+
+.aside.scrolled .logo-scrolled {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .aside {
+        padding: 1rem 20px;
+    }
+    
+    .menu {
+        gap: 20px;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aside {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+    
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .menu-list_link {
+        font-size: 14px;
+    }
+    
+    .logo-img {
+        height: 28px;
+    }
+    
+    .aside.scrolled {
+        padding: 8px 16px;
+    }
+}

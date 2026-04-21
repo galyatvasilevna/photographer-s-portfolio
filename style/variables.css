@@ -25,3 +25,21 @@
     --color-text-accent: #f8f9fa;
     --background-color: #fff;
 }
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    :root {
+        --size-h1-page: 50px;
+        --size-h2-section: 36px;
+        --size-card-title: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --size-h1-page: 40px;
+        --size-h2-page: 18px;
+        --size-h2-section: 32px;
+        --size-card-title: 20px;
+        --size-text: 15px;
+    }
+}

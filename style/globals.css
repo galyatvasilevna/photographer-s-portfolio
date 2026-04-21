@@ -2,6 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  font-weight: 400;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  inline-size: 1200px;
+  max-width: 1400px;
   block-size: 100%;
   margin: auto;
 }
@@ -52,4 +53,22 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    padding-top: 70px;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px;
+    padding-left: 16px;
+    padding-right: 16px;
+    }
 }
