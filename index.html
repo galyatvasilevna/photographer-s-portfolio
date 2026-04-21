@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Портфолио фотографа</title>
-    <link rel="icon" href="./image/icon.webp" type="image/webp" />
+    <link rel="icon" href="./image/icon.png" type="image/webp" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./style/globals.css" />
     <link rel="stylesheet" href="./style/variables.css" />
+    <link rel="stylesheet" href="./style/aside.css" />
     <link rel="stylesheet" href="./style/header.css" />
     <link rel="stylesheet" href="./style/portfolio.css" />
     <link rel="stylesheet" href="./style/author.css" />
@@ -16,31 +17,35 @@
     <link rel="stylesheet" href="./style/footer.css" />
 </head>
 <body>
-    <aside class="aside">
-        <img src="./image/logo_white.png" alt="Логотип" class="logo" />
-        <ul class="menu">
-            <li class="menu-list">
-                <a href="#header" class="menu-list_link">Главная</a>
-            </li>
-            <li class="menu-list">
-                <a href="#portfolio" class="menu-list_link">Портфолио</a>
-            </li>
-            <li class="menu-list">
-                <a href="#author" class="menu-list_link">Об авторе</a>
-            </li>
-            <li class="menu-list">
-                <a href="#prices" class="menu-list_link">Услуги</a>
-            </li>
-            <li class="menu-list">
-                <a href="#contacts" class="menu-list_link">Контакты</a>
-            </li>
-        </ul>
-    </aside>
-
     <header class="header" id="header">
-        <h1 class="header-title">Александра Петрова</h1>
-        <h2 class="header-subtitle">Профессиональная фотография для особенных моментов</h2>
-        <button class="header-button">Заказать съемку</button>
+        <aside class="aside">
+            <div class="logo-container">
+                <img class="logo-img logo-default" src="./image/logo_white.png" alt="Логотип"  />
+                <img class="logo-img logo-scrolled" src="./image/logo_dark.png" alt="Логотип" />
+            </div>
+            <ul class="menu">
+                <li class="menu-list">
+                    <a href="#header" class="menu-list_link">Главная</a>
+                </li>
+                <li class="menu-list">
+                    <a href="#portfolio" class="menu-list_link">Портфолио</a>
+                </li>
+                <li class="menu-list">
+                    <a href="#author" class="menu-list_link">Об авторе</a>
+                </li>
+                <li class="menu-list">
+                    <a href="#prices" class="menu-list_link">Услуги</a>
+                </li>
+                <li class="menu-list">
+                    <a href="#contacts" class="menu-list_link">Контакты</a>
+                </li>
+            </ul>
+        </aside>
+        <div class="header-titles">
+            <h1 class="header-title">Александра Петрова</h1>
+            <h2 class="header-subtitle">Профессиональная фотография для особенных моментов</h2>
+            <button class="header-button" id="orderBtnHeader">Заказать съемку</button>
+        </div>
     </header>
 
     <main class="main">
@@ -314,7 +319,7 @@
         </div>
         <div class="navigation">
             <p class="navigation-text">Навигация</p>
-            <ul class="menu">
+            <ul class="footer-menu">
                 <li class="menu-list">
                     <a href="#header" class="menu-list_link">Главная</a>
                 </li>
@@ -333,7 +338,7 @@
             </ul>
         </div>
         <div class="services">
-            <h5 class="services-title">Услуги</h5>
+            <p class="services-title">Услуги</p>
             <ul class="services-ul">
                 <li class="services-list">Свадебная съемка</li>
                 <li class="services-list">Портретная съемка</li>
@@ -342,6 +347,7 @@
             </ul>
         </div>
         <div class="footer-contacts">
+            <p class="services-title">Контакты</p>
             <ul class="footer-contacts-text">
                 <li class="footer-contacts-list">+7 (999) 123-45-67</li>
                 <li class="footer-contacts-list">info@photostudio.ru</li>
@@ -350,17 +356,17 @@
             <ul class="footer-contacts-link">
                 <li class="footer-link">
                     <a href="#" aria-label="Instagram">
-                        <img src="./image/instagram.png" alt="Instagram" />
+                        <img class="footer-link-image" src="./image/instagram.png" alt="Instagram" />
                     </a>
                 </li>
                 <li class="footer-link">
                     <a href="#" aria-label="Facebook">
-                        <img src="./image/facebook.png" alt="Facebook" />
+                        <img class="footer-link-image" src="./image/facebook.png" alt="Facebook" />
                     </a>
                 </li>
                 <li class="footer-link">
                     <a href="#" aria-label="Email">
-                        <img src="./image/letter.png" alt="Email" />
+                        <img class="footer-link-image" src="./image/letter.png" alt="Email" />
                     </a>
                 </li>
             </ul>
@@ -369,8 +375,11 @@
 
     <div class="info">
         <p class="info-text">© 2026 PhotoStudio. Все права защищены.</p>
-        <a href="#" class="info-link">Политика конфиденциальности</a>
-        <a href="#" class="info-link">Пользовательское соглашение</a>
+        <div class="info-user">
+            <a href="#" class="info-link">Политика конфиденциальности</a>
+            <a href="#" class="info-link">Пользовательское соглашение</a>
+        </div>
     </div>
+<script src="./script/scroll.js"></script>
 </body>
 </html>
