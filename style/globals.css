@@ -2,7 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  font-weight: 400;
+  overflow-x: hidden;
 }
 
 body {

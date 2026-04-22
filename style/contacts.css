@@ -45,6 +45,31 @@
     border: var(--color-text) solid 1px;
 }
 
+.input:valid, .textarea:valid {
+    border: green solid 1px;
+}
+
+.input:invalid, .textarea:invalid {
+    border: red solid 1px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.input.error,
+.textarea.error {
+    border-color: #dc3545;
+}
+
+.input.success,
+.textarea.success {
+    border-color: #28a745;
+}
+
 .textarea {
     max-width: 100%;
     padding: 15px 5px;

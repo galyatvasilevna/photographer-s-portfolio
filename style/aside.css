@@ -3,18 +3,19 @@
     line-height: 1.3;
     color: var(--color-h1-page);
     font-size: var(--size-text);
-    position: relative;
+    position: fixed;
     z-index: 15;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.1rem 20px;
-    background-color: /*rgba(0, 0, 0, 0.1)*/ transparent;
+    background-color: transparent;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     transition: all 0.2s;
 }
 
@@ -33,8 +34,42 @@
     display: none;
 }
 
+.burger-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 12;
+}
+
+.burger-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--background-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-button.active .burger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-button.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-button.active .burger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 .menu {
     display: flex;
+    flex-shrink: 0;
     gap: 30px;
 }
 
@@ -84,6 +119,10 @@
 }
 
 @media (max-width: 768px) {
+    .burger-button {
+        display: flex;
+    }
+
     .aside {
         flex-direction: column;
         gap: 12px;
@@ -91,11 +130,28 @@
     }
     
     .menu {
-        gap: 15px;
-        flex-wrap: wrap;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-accent);
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin: 0;
+        padding: 80px 20px 40px;
+        transition: right 0.3s ease;
+        z-index: 1001;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     }
     
+    .menu.active {
+        right: 0;
+    }
+
     .menu-list_link {
         font-size: 14px;
     }
@@ -104,6 +160,24 @@
         height: 28px;
     }
     
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
     .aside.scrolled {
         padding: 8px 16px;
     }
