@@ -23,6 +23,7 @@
                 <img class="logo-img logo-default" src="./image/logo_white.png" alt="Логотип"  />
                 <img class="logo-img logo-scrolled" src="./image/logo_dark.png" alt="Логотип" />
             </div>
+            
             <ul class="menu">
                 <li class="menu-list">
                     <a href="#header" class="menu-list_link">Главная</a>
@@ -40,6 +41,12 @@
                     <a href="#contacts" class="menu-list_link">Контакты</a>
                 </li>
             </ul>
+
+            <button class="burger-button" aria-label="Меню">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
         </aside>
         <div class="header-titles">
             <h1 class="header-title">Александра Петрова</h1>
@@ -53,68 +60,68 @@
             <h2 class="title section-title">Портфолио</h2>
             <h3 class="title-explanation">Примеры работ в различных жанрах фотографии</h3>
             <ul class="portfolio-menu">
-                <li class="portfolio-list"><button class="portfolio-list-button">Все работы</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Свадьба</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Портреты</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Fashion</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">События</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Коммерция</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Пейзажи</button></li>
-                <li class="portfolio-list"><button class="portfolio-list-button">Street</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="all">Все работы</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="wedding">Свадьба</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="portrait">Портреты</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="fashion">Fashion</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="events">События</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="commercial">Коммерция</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="landscape">Пейзажи</button></li>
+                <li class="portfolio-list"><button class="portfolio-list-button" data-filter="street">Street</button></li>
             </ul>
             <ul class="gallery">
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="commercial">
                     <img class="gallery-image" src="./gallery/commission.jpg" alt="Коммерческая съемка 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="commercial">
                     <img class="gallery-image" src="./gallery/commission.webp" alt="Коммерческая съемка 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="events">
                     <img class="gallery-image" src="./gallery/events.jpg" alt="Событийная съемка 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="events">
                     <img class="gallery-image" src="./gallery/events3.jpg" alt="Событийная съемка 3" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="fashion">
                     <img class="gallery-image" src="./gallery/fashion.jpg" alt="Fashion съемка 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="fashion">
                     <img class="gallery-image" src="./gallery/fashion3.jpg" alt="Fashion съемка 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="fashion">
                     <img class="gallery-image" src="./gallery/fashion4.jpg" alt="Fashion съемка 3" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="landscape">
                     <img class="gallery-image" src="./gallery/landscapes.jpg" alt="Пейзаж 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="landscape">
                     <img class="gallery-image" src="./gallery/landscapes2.jpg" alt="Пейзаж 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="landscape">
                     <img class="gallery-image" src="./gallery/landscapes3.jpg" alt="Пейзаж 3" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="landscape">
                     <img class="gallery-image" src="./gallery/landscapes4.jpg" alt="Пейзаж 4" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="portrait">
                     <img class="gallery-image" src="./gallery/portrait.webp" alt="Портрет 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="portrait">
                     <img class="gallery-image" src="./gallery/portrait2.webp" alt="Портрет 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="street">
                     <img class="gallery-image" src="./gallery/Street.webp" alt="Street фотография 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="wedding">
                     <img class="gallery-image" src="./gallery/wedding.webp" alt="Свадебная съемка 1" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="street">
                     <img class="gallery-image" src="./gallery/Street2.webp" alt="Street фотография 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="wedding">
                     <img class="gallery-image" src="./gallery/wedding2.jpg" alt="Свадебная съемка 2" />
                 </li>
-                <li class="gallery-list">
+                <li class="gallery-list" data-category="wedding">
                     <img class="gallery-image" src="./gallery/wedding3.webp" alt="Свадебная съемка 3" />
                 </li>
             </ul>
@@ -381,5 +388,8 @@
         </div>
     </div>
 <script src="./script/scroll.js"></script>
+<script src="./script/filter.js"></script>
+<script src="./script/burger.js"></script>
+<script src="./script/form.js"></script>
 </body>
 </html>
