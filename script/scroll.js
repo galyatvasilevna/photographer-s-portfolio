@@ -1,8 +1,8 @@
 (function () {
-  const aside = document.querySelector(".aside"); // исправлено
+  const aside = document.querySelector(".aside");
   const bodyEl = document.body;
 
-  if (!aside) return; // защита от отсутствия элемента
+  if (!aside) return;
 
   function updateAsideOnScroll() {
     const scrollY = window.scrollY;
@@ -20,7 +20,6 @@
       }
     }
 
-    // Корректировка scroll-padding-top для фиксированной шапки
     if (bodyEl.classList.contains("aside-fixed")) {
       const headerFixedHeight = aside.offsetHeight;
       document.documentElement.style.scrollPaddingTop =
@@ -30,7 +29,6 @@
     }
   }
 
-  // Функция плавной прокрутки к элементу
   function smoothScrollToElement(element, offset = 10) {
     if (!element) return;
     const asideHeight = aside.classList.contains("scrolled")
@@ -44,7 +42,6 @@
     window.scrollTo({ top: targetPosition, behavior: "smooth" });
   }
 
-  // Обработчик скролла с оптимизацией
   let ticking = false;
   window.addEventListener("scroll", () => {
     if (!ticking) {
@@ -59,7 +56,6 @@
   window.addEventListener("resize", () => updateAsideOnScroll());
   updateAsideOnScroll();
 
-  // Плавная прокрутка для якорных ссылок
   const allAnchorLinks = document.querySelectorAll(
     'a[href^="#"]:not([href="#"])',
   );
@@ -76,7 +72,6 @@
     });
   });
 
-  // Кнопка "Заказать съемку" в header
   const orderHeaderBtn = document.getElementById("orderBtnHeader");
   if (orderHeaderBtn) {
     orderHeaderBtn.addEventListener("click", (e) => {
@@ -86,7 +81,6 @@
     });
   }
 
-  // Кнопки "Заказать" в карточках
   const cardBtns = document.querySelectorAll(".card-button");
   cardBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
