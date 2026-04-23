@@ -13,6 +13,8 @@ body {
   max-width: 1400px;
   block-size: 100%;
   margin: auto;
+  background-color: var(--background-color);
+  color: var(--color-text);
 }
 
 h1,
@@ -54,7 +56,6 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
 
 @media (max-width: 1024px) and (min-width: 768px) {
   body {

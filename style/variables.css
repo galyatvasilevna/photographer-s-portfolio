@@ -26,6 +26,39 @@
     --background-color: #fff;
 }
 
+:root,
+.theme-light {
+    --background-color: #fff;
+    --color-text: #717182;
+    --color-h2-section: #212529;
+    --color-accent: #212529;
+    --background-color-accent: #f8f9fa;
+    --color-text-accent: #f8f9fa;
+    --header-bg: rgba(33, 37, 41, 0.95);
+    --footer-bg: #212529;
+    --footer-text: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark {
+    --background-color: #1a1a2e;
+    --color-text: #e0e0e0;
+    --color-h2-section: #f8f9fa;
+    --color-accent: #0c397e;
+    --background-color-accent: #16213e;
+    --color-text-accent: #e0e0e0;
+    --header-bg: rgba(0, 0, 0, 0.95);
+    --footer-bg: #0f0f1a;
+    --footer-text: #e0e0e0;
+    --card-bg: #16213e;
+    --border-color: #2a2a4a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --overlay-color: rgba(0, 0, 0, 0.7);
+}
+
 @media (max-width: 1024px) and (min-width: 768px) {
     :root {
         --size-h1-page: 50px;
