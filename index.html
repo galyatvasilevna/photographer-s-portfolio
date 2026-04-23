@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./style/prices.css" />
     <link rel="stylesheet" href="./style/contacts.css" />
     <link rel="stylesheet" href="./style/footer.css" />
+    <link rel="stylesheet" href="./style/modal.css" />
 </head>
 <body>
     <header class="header" id="header">
@@ -24,6 +25,12 @@
                 <img class="logo-img logo-scrolled" src="./image/logo_dark.png" alt="Логотип" />
             </div>
             
+            <div class="theme-switcher">
+                <button class="theme-btn" data-theme="light">🌞 Светлая</button>
+                <button class="theme-btn" data-theme="dark">🌙 Тёмная</button>
+                <button class="theme-btn" data-theme="auto">⚡ Авто</button>
+            </div>
+
             <ul class="menu">
                 <li class="menu-list">
                     <a href="#header" class="menu-list_link">Главная</a>
@@ -254,7 +261,7 @@
                 <form class="form" action="#" method="post">
                     <label class="form-label">
                         <span class="form-text">Ваше имя *</span>
-                        <input class="input" type="text" name="name" required placeholder="Иван Иванов" />
+                        <input class="input" type="text" name="name" required minlength="2" placeholder="Иван Иванов" />
                     </label>
                     <label class="form-label">
                         <span class="form-text">Email *</span>
@@ -262,11 +269,11 @@
                     </label>
                     <label class="form-label">
                         <span class="form-text">Телефон</span>
-                        <input class="input" type="tel" name="tel" placeholder="+7 (999) 123-45-67" />
+                        <input class="input" type="tel" name="tel" pattern="(\+7|7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}" placeholder="+7 (999) 123-45-67" />
                     </label>
                     <label class="form-label">
                         <span class="form-text">Сообщение *</span>
-                        <textarea class="textarea" name="message" required placeholder="Расскажите о желаемой фотосессии..."></textarea>
+                        <textarea class="textarea" name="message" required minlength="10" placeholder="Расскажите о желаемой фотосессии..."></textarea>
                     </label>
                     <button type="submit" class="form-button">
                         <img class="form-button-image" src="./image/sending.png" alt="Иконка отправки" />
@@ -387,9 +394,20 @@
             <a href="#" class="info-link">Пользовательское соглашение</a>
         </div>
     </div>
+
+    <div class="modal" id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-image" id="modalImage" src="" alt="Увеличенное изображение">
+    <div class="modal-controls">
+        <button class="modal-prev" id="modalPrev">‹</button>
+        <button class="modal-next" id="modalNext">›</button>
+    </div>
+</div>
 <script src="./script/scroll.js"></script>
 <script src="./script/filter.js"></script>
 <script src="./script/burger.js"></script>
 <script src="./script/form.js"></script>
+<script src="./script/modal.js"></script>
+<script src="./script/theme.js"></script>
 </body>
 </html>
