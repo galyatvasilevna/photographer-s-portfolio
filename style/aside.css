@@ -18,7 +18,6 @@
     align-items: center;
     flex-shrink: 0;
     transition: all 0.2s;
-    flex-shrink: 0;
 }
 
 .logo-img {
@@ -55,6 +54,21 @@
     background-color: var(--background-color);
     border-radius: 3px;
     transition: all 0.3s ease;
+}
+
+.burger-button:hover .burger-line {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.burger-button:focus-visible {
+    outline: 2px solid var(--color-h1-page);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.burger-button:active .burger-line {
+    transform: scale(0.95);
+    transition: all 0.05s ease;
 }
 
 .burger-button.active .burger-line:nth-child(1) {
@@ -95,6 +109,18 @@
     display: block;
 }
 
+.aside.scrolled .burger-line {
+    background-color: var(--color-accent);
+}
+
+.aside.scrolled .burger-button:hover .burger-line {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.aside.scrolled .burger-button:focus-visible {
+    outline-color: var(--color-accent);
+}
+
 .theme-switcher {
     display: flex;
     gap: 8px;
@@ -116,9 +142,25 @@
     transition: all 0.3s ease;
 }
 
+.theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.theme-btn:focus-visible {
+    outline: 2px solid var(--color-h1-page);
+    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .theme-btn.active {
     background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
+}
+
+.theme-btn:active {
+    transform: translateY(0px);
+    transition: all 0.05s ease;
 }
 
 .aside.scrolled .theme-btn {

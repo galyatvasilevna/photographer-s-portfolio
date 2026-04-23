@@ -98,6 +98,34 @@
     display: block;
 }
 
+.form-button:hover {
+    background-color: #05152c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:hover .form-button-image {
+    transform: translateX(3px);
+}
+
+.form-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    background-color: #05152c;
+}
+
+.form-button:active {
+    transform: translateY(0px);
+    transition: all 0.05s ease;
+}
+
+.form-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+    box-shadow: none;
+}
+
 .contacts-text {
     display: flex;
     flex-direction: column;
@@ -142,7 +170,7 @@
 }
 
 .time-text {
-    font-size: /*var(--size-dop-text)*/ 14px;
+    font-size: 14px;
 }
 
 .time-dop {

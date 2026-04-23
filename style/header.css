@@ -71,6 +71,20 @@
 
 .header-button:hover {
     background-color: var(--background-color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    background-color: var(--background-color-accent);
+}
+
+.header-button:active {
+    transform: translateY(0px);
+    background-color: #e9ecef;
+    transition: all 0.05s ease;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {

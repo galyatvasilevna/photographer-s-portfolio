@@ -45,6 +45,17 @@
     transform: scale(1.1);
 }
 
+.modal-close:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.modal-close:active {
+    transform: scale(0.95);
+    transition: all 0.05s ease;
+}
+
 .modal-controls {
     position: absolute;
     bottom: 20px;
@@ -75,6 +86,17 @@
 .modal-prev:hover, .modal-next:hover {
     background-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
+}
+
+.modal-prev:focus-visible, .modal-next:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal-prev:active, .modal-next:active {
+    transform: scale(0.95);
+    transition: all 0.05s ease;
 }
 
 body.modal-open {

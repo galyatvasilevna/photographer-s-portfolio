@@ -65,6 +65,24 @@
     cursor: pointer;
 }
 
+.card-button:hover {
+    background-color: #05152c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.card-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    background-color: #05152c;
+}
+
+.card-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.05s ease;
+}
+
 .prices-title {
     color: var(--color-accent);
     padding: 50px 20px;
