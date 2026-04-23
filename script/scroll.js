@@ -1,92 +1,76 @@
+// script/scroll.js
 (function () {
-  const aside = document.querySelector(".aside");
-  const bodyEl = document.body;
+  document.addEventListener("DOMContentLoaded", function () {
+    const aside = AppUtils.getAside();
+    if (!aside) return;
 
-  if (!aside) return;
-
-  function updateAsideOnScroll() {
-    const scrollY = window.scrollY;
-    const threshold = 45;
-
-    if (scrollY > threshold) {
-      if (!aside.classList.contains("scrolled")) {
-        aside.classList.add("scrolled");
-        bodyEl.classList.add("aside-fixed");
-      }
-    } else {
+    function updateScrollPadding() {
       if (aside.classList.contains("scrolled")) {
-        aside.classList.remove("scrolled");
-        bodyEl.classList.remove("aside-fixed");
+        document.documentElement.style.scrollPaddingTop = `${aside.offsetHeight + 20}px`;
+      } else {
+        document.documentElement.style.scrollPaddingTop = "";
       }
     }
 
-    if (bodyEl.classList.contains("aside-fixed")) {
-      const headerFixedHeight = aside.offsetHeight;
-      document.documentElement.style.scrollPaddingTop =
-        headerFixedHeight + 20 + "px";
-    } else {
-      document.documentElement.style.scrollPaddingTop = "";
-    }
-  }
+    function updateAsideOnScroll() {
+      const scrollY = window.scrollY;
+      const threshold = 45;
 
-  function smoothScrollToElement(element, offset = 10) {
-    if (!element) return;
-    const asideHeight = aside.classList.contains("scrolled")
-      ? aside.offsetHeight
-      : 0;
-    const targetPosition =
-      element.getBoundingClientRect().top +
-      window.pageYOffset -
-      asideHeight -
-      offset;
-    window.scrollTo({ top: targetPosition, behavior: "smooth" });
-  }
-
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateAsideOnScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  window.addEventListener("resize", () => updateAsideOnScroll());
-  updateAsideOnScroll();
-
-  const allAnchorLinks = document.querySelectorAll(
-    'a[href^="#"]:not([href="#"])',
-  );
-  allAnchorLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href");
-      if (targetId && targetId !== "#") {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          smoothScrollToElement(targetElement, 15);
+      if (scrollY > threshold) {
+        if (!aside.classList.contains("scrolled")) {
+          aside.classList.add("scrolled");
+          updateScrollPadding();
+        }
+      } else {
+        if (aside.classList.contains("scrolled")) {
+          aside.classList.remove("scrolled");
+          updateScrollPadding();
         }
       }
-    });
-  });
+    }
 
-  const orderHeaderBtn = document.getElementById("orderBtnHeader");
-  if (orderHeaderBtn) {
-    orderHeaderBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const contactsSection = document.getElementById("contacts");
-      smoothScrollToElement(contactsSection, 10);
-    });
-  }
+    const orderHeaderBtn = document.getElementById("orderBtnHeader");
+    if (orderHeaderBtn) {
+      orderHeaderBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const contactsSection = document.getElementById("contacts");
+        AppUtils.smoothScrollTo(contactsSection);
+      });
+    }
 
-  const cardBtns = document.querySelectorAll(".card-button");
-  cardBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const contactsSec = document.getElementById("contacts");
-      smoothScrollToElement(contactsSec, 10);
+    document.querySelectorAll(".card-button").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const contactsSec = document.getElementById("contacts");
+        AppUtils.smoothScrollTo(contactsSec);
+      });
     });
+
+    document
+      .querySelectorAll('a[href^="#"]:not([href="#"])')
+      .forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            AppUtils.smoothScrollTo(targetElement, 15);
+          }
+        });
+      });
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateAsideOnScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    window.addEventListener("resize", updateScrollPadding);
+    updateAsideOnScroll();
   });
 })();

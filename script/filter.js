@@ -1,7 +1,8 @@
+// script/filter.js
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = AppUtils.getGalleryItems();
     const filterButtons = document.querySelectorAll(".portfolio-list-button");
-    const galleryItems = document.querySelectorAll(".gallery-list");
 
     function filterGallery(category) {
       let visibleCount = 0;
@@ -19,8 +20,7 @@
         }
       });
 
-      localStorage.setItem("selectedFilter", category);
-
+      // Обновляем активную кнопку
       filterButtons.forEach((btn) => {
         const btnCategory = btn.getAttribute("data-filter");
         if (btnCategory === category) {
@@ -30,6 +30,9 @@
         }
       });
 
+      localStorage.setItem("selectedFilter", category);
+
+      // Cообщение, если нет результатов
       const gallery = document.querySelector(".gallery");
       let noResultsMsg = document.querySelector(".no-results-message");
 
@@ -37,19 +40,18 @@
         if (!noResultsMsg) {
           noResultsMsg = document.createElement("li");
           noResultsMsg.className = "no-results-message";
-          noResultsMsg.textContent = "Нет работ в этой категории";
-          noResultsMsg.style.textAlign = "center";
-          noResultsMsg.style.gridColumn = "1 / -1";
-          noResultsMsg.style.padding = "60px 20px";
-          noResultsMsg.style.fontSize = "18px";
-          noResultsMsg.style.color = "var(--color-text)";
-          noResultsMsg.style.fontFamily = "'Montserrat', sans-serif";
+          noResultsMsg.textContent = "😔 Нет работ в этой категории";
+          noResultsMsg.style.cssText = `
+                        text-align: center;
+                        grid-column: 1 / -1;
+                        padding: 60px 20px;
+                        font-size: 18px;
+                        color: var(--color-text);
+                    `;
           gallery.appendChild(noResultsMsg);
         }
-      } else {
-        if (noResultsMsg) {
-          noResultsMsg.remove();
-        }
+      } else if (noResultsMsg) {
+        noResultsMsg.remove();
       }
     }
 
@@ -61,15 +63,18 @@
     });
 
     const savedCategory = localStorage.getItem("selectedFilter");
-    if (savedCategory && savedCategory !== "all") {
-      const categoryExists = Array.from(filterButtons).some(
-        (btn) => btn.getAttribute("data-filter") === savedCategory,
-      );
-      if (categoryExists) {
-        filterGallery(savedCategory);
-      } else {
-        filterGallery("all");
-      }
+    const validCategories = [
+      "all",
+      "wedding",
+      "portrait",
+      "fashion",
+      "events",
+      "commercial",
+      "landscape",
+      "street",
+    ];
+    if (savedCategory && validCategories.includes(savedCategory)) {
+      filterGallery(savedCategory);
     } else {
       filterGallery("all");
     }

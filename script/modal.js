@@ -9,15 +9,15 @@
     let currentImages = [];
     let currentIndex = 0;
 
-    const galleryImages = document.querySelectorAll(".gallery-image");
-
-    if (galleryImages.length === 0) return;
-
-    galleryImages.forEach((img) => {
-      currentImages.push(img.src);
-    });
+    function updateImageList() {
+      const visibleImages = AppUtils.getVisibleImages();
+      currentImages = Array.from(visibleImages).map((img) => img.src);
+    }
 
     function openModal(index) {
+      updateImageList();
+      if (currentImages.length === 0) return;
+
       if (index < 0) index = 0;
       if (index >= currentImages.length) index = currentImages.length - 1;
 
@@ -46,29 +46,28 @@
       modalImage.src = currentImages[currentIndex];
     }
 
-    galleryImages.forEach((img, index) => {
-      img.addEventListener("click", (e) => {
-        e.stopPropagation();
+    document.querySelector(".gallery")?.addEventListener("click", (e) => {
+      const img = e.target.closest(".gallery-image");
+      if (img) {
+        const allImages = AppUtils.getVisibleImages();
+        const index = Array.from(allImages).findIndex((i) => i.src === img.src);
         openModal(index);
-      });
+      }
     });
 
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (prevBtn) prevBtn.addEventListener("click", prevImage);
     if (nextBtn) nextBtn.addEventListener("click", nextImage);
 
-    modal.addEventListener("click", (e) => {
+    modal?.addEventListener("click", (e) => {
       if (e.target === modal) closeModal();
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("show")) {
-        closeModal();
-      }
-      if (modal.classList.contains("show")) {
-        if (e.key === "ArrowLeft") prevImage();
-        if (e.key === "ArrowRight") nextImage();
-      }
+      if (!modal?.classList.contains("show")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
     });
   });
 })();
