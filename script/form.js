@@ -1,297 +1,192 @@
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".form");
-
     if (!form) return;
 
-    // Получаем элементы формы
-    const nameInput = form.querySelector("input[name='name']");
-    const emailInput = form.querySelector("input[name='email']");
-    const phoneInput = form.querySelector("input[name='tel']");
-    const messageInput = form.querySelector("textarea[name='message']");
+    const fields = {
+      name: form.querySelector("input[name='name']"),
+      email: form.querySelector("input[name='email']"),
+      phone: form.querySelector("input[name='tel']"),
+      message: form.querySelector("textarea[name='message']"),
+    };
 
-    // Добавляем атрибуты валидации, если их нет
-    if (nameInput && !nameInput.hasAttribute("minlength")) {
-      nameInput.setAttribute("minlength", "2");
-      nameInput.setAttribute("required", "");
-    }
+    const errors = {
+      name: {
+        valueMissing: "Введите ваше имя",
+        tooShort: "Имя: минимум 2 символа",
+      },
+      email: {
+        valueMissing: "Введите email",
+        typeMismatch: "Некорректный email",
+      },
+      phone: { patternMismatch: "Некорректный номер телефона" },
+      message: {
+        valueMissing: "Введите сообщение",
+        tooShort: "Сообщение: минимум 10 символов",
+      },
+    };
 
-    if (emailInput && !emailInput.hasAttribute("required")) {
-      emailInput.setAttribute("required", "");
-    }
-
-    if (messageInput && !messageInput.hasAttribute("minlength")) {
-      messageInput.setAttribute("minlength", "10");
-      messageInput.setAttribute("required", "");
-    }
-
-    // Функция сохранения данных в localStorage
-    function saveFormData() {
-      const formData = {
-        name: nameInput ? nameInput.value : "",
-        email: emailInput ? emailInput.value : "",
-        phone: phoneInput ? phoneInput.value : "",
-        message: messageInput ? messageInput.value : "",
-        savedAt: new Date().toISOString(),
-      };
-      localStorage.setItem("contactFormData", JSON.stringify(formData));
-    }
-
-    // Функция загрузки данных из localStorage
-    function loadFormData() {
-      const savedData = localStorage.getItem("contactFormData");
-      if (savedData) {
-        try {
-          const formData = JSON.parse(savedData);
-          if (nameInput) nameInput.value = formData.name || "";
-          if (emailInput) emailInput.value = formData.email || "";
-          if (phoneInput) phoneInput.value = formData.phone || "";
-          if (messageInput) messageInput.value = formData.message || "";
-        } catch (e) {
-          console.error("Ошибка загрузки данных:", e);
-        }
+    function showError(input, message) {
+      const wrapper = input.closest(".form-label");
+      let error = wrapper.querySelector(".error-message");
+      if (!error) {
+        error = document.createElement("span");
+        error.className = "error-message";
+        wrapper.appendChild(error);
       }
-    }
-
-    // Функция получения сообщения об ошибке через ValidityState
-    function getErrorMessage(input) {
-      const validity = input.validity;
-
-      if (validity.valueMissing) {
-        return "Пожалуйста, заполните это поле";
-      }
-      if (validity.typeMismatch) {
-        if (input.type === "email") {
-          return "Введите корректный email (например: name@domain.ru)";
-        }
-        return "Пожалуйста, введите корректное значение";
-      }
-      if (validity.tooShort) {
-        const minLength = input.minLength;
-        const currentLength = input.value.length;
-        return `Минимальная длина: ${minLength} символов (сейчас ${currentLength})`;
-      }
-      if (validity.tooLong) {
-        const maxLength = input.maxLength;
-        return `Максимальная длина: ${maxLength} символов`;
-      }
-      if (validity.patternMismatch) {
-        return "Пожалуйста, используйте правильный формат";
-      }
-      if (validity.rangeUnderflow) {
-        return `Значение должно быть не меньше ${input.min}`;
-      }
-      if (validity.rangeOverflow) {
-        return `Значение должно быть не больше ${input.max}`;
-      }
-      if (validity.stepMismatch) {
-        return "Пожалуйста, введите корректное значение";
-      }
-      if (validity.badInput) {
-        return "Пожалуйста, введите корректное значение";
-      }
-
-      return "Некорректное значение";
-    }
-
-    // Функция проверки валидности поля
-    function isValid(input) {
-      if (!input) return true;
-      return input.validity.valid;
-    }
-
-    // Функция отображения ошибки
-    function showError(input) {
-      if (!input) return;
-
-      const formLabel = input.closest(".form-label");
-      let errorSpan = formLabel.querySelector(".error-message");
-
-      if (!errorSpan) {
-        errorSpan = document.createElement("span");
-        errorSpan.className = "error-message";
-        formLabel.appendChild(errorSpan);
-      }
-
-      const errorMessage = getErrorMessage(input);
-      errorSpan.textContent = errorMessage;
+      error.textContent = message;
       input.classList.add("invalid");
       input.classList.remove("valid");
     }
 
-    // Функция удаления ошибки
     function clearError(input) {
-      if (!input) return;
-
-      const formLabel = input.closest(".form-label");
-      const errorSpan = formLabel?.querySelector(".error-message");
-      if (errorSpan) {
-        errorSpan.remove();
-      }
+      const wrapper = input.closest(".form-label");
+      const error = wrapper.querySelector(".error-message");
+      if (error) error.remove();
       input.classList.remove("invalid");
-      if (input.value.trim() !== "") {
-        input.classList.add("valid");
-      } else {
-        input.classList.remove("valid");
-      }
+      input.classList.add("valid");
     }
 
-    // Функция проверки и отображения ошибки для конкретного поля
     function validateField(input) {
-      if (!input) return true;
+      const name = input.getAttribute("name");
+      const validity = input.validity;
 
-      if (!isValid(input)) {
-        showError(input);
-        return false;
-      } else {
+      if (name === "tel" && !input.value.trim()) {
         clearError(input);
         return true;
       }
+
+      if (validity.valid) {
+        clearError(input);
+        return true;
+      }
+
+      let message = "";
+      if (validity.valueMissing)
+        message = errors[name]?.valueMissing || "Заполните поле";
+      else if (validity.typeMismatch)
+        message = errors[name]?.typeMismatch || "Неверный формат";
+      else if (validity.patternMismatch)
+        message = errors[name]?.patternMismatch || "Неверный формат";
+      else if (validity.tooShort)
+        message = errors[name]?.tooShort || "Слишком короткое значение";
+
+      showError(input, message);
+      return false;
     }
 
-    // Функция валидации всей формы
     function validateForm() {
       let isValid = true;
-
-      // Валидация всех полей
-      const fields = [nameInput, emailInput, phoneInput, messageInput];
-      fields.forEach((field) => {
-        if (field && field.hasAttribute("required") && !validateField(field)) {
-          isValid = false;
-        } else if (
-          field &&
-          !field.hasAttribute("required") &&
-          field.value.trim() !== ""
-        ) {
-          if (!validateField(field)) {
-            isValid = false;
-          }
-        } else if (field && !field.hasAttribute("required")) {
-          clearError(field);
-        }
-      });
-
+      for (const input of Object.values(fields)) {
+        if (input && !validateField(input)) isValid = false;
+      }
       return isValid;
     }
 
-    // Функция очистки формы
-    function resetForm() {
-      if (nameInput) nameInput.value = "";
-      if (emailInput) emailInput.value = "";
-      if (phoneInput) phoneInput.value = "";
-      if (messageInput) messageInput.value = "";
-
-      // Очищаем ошибки
-      const allErrors = document.querySelectorAll(".error-message");
-      allErrors.forEach((error) => error.remove());
-
-      const allInputs = form.querySelectorAll("input, textarea");
-      allInputs.forEach((input) => {
-        input.classList.remove("valid", "invalid");
-      });
-
-      // Удаляем данные из localStorage
-      localStorage.removeItem("contactFormData");
-
-      // Показываем сообщение об успехе
-      showNotification("Сообщение успешно отправлено!", "success");
+    function saveToStorage() {
+      const data = {};
+      for (const [key, input] of Object.entries(fields)) {
+        if (input) data[key] = input.value;
+      }
+      localStorage.setItem("contactFormData", JSON.stringify(data));
     }
 
-    // Функция показа уведомления
-    function showNotification(message, type = "success") {
-      let notification = document.querySelector(".form-notification");
-
-      if (!notification) {
-        notification = document.createElement("div");
-        notification.className = "form-notification";
-        form.insertAdjacentElement("afterend", notification);
+    function loadFromStorage() {
+      const saved = localStorage.getItem("contactFormData");
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          for (const [key, input] of Object.entries(fields)) {
+            if (input && data[key]) input.value = data[key];
+          }
+        } catch (e) {}
       }
+    }
 
+    function resetForm() {
+      form.reset();
+      for (const input of Object.values(fields)) {
+        if (input) clearError(input);
+      }
+      localStorage.removeItem("contactFormData");
+    }
+
+    let notificationTimeout = null;
+
+    function showNotification(message, isError = false) {
+      const oldNotification = document.querySelector(".form-notification");
+      if (oldNotification) oldNotification.remove();
+      if (notificationTimeout) clearTimeout(notificationTimeout);
+
+      const notification = document.createElement("div");
+      notification.className = "form-notification";
       notification.textContent = message;
-      notification.style.padding = "15px 20px";
-      notification.style.borderRadius = "10px";
-      notification.style.marginTop = "20px";
-      notification.style.textAlign = "center";
-      notification.style.fontFamily = "'Montserrat', sans-serif";
+      notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                max-width: 350px;
+                padding: 15px 20px;
+                border-radius: 10px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 14px;
+                z-index: 9999;
+                animation: slideInRight 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
 
-      if (type === "success") {
-        notification.style.backgroundColor = "#d4edda";
-        notification.style.color = "#155724";
-        notification.style.border = "1px solid #c3e6cb";
-      } else {
+      if (isError) {
         notification.style.backgroundColor = "#f8d7da";
         notification.style.color = "#721c24";
-        notification.style.border = "1px solid #f5c6cb";
+        notification.style.borderLeft = "4px solid #dc3545";
+      } else {
+        notification.style.backgroundColor = "#d4edda";
+        notification.style.color = "#155724";
+        notification.style.borderLeft = "4px solid #28a745";
       }
 
-      // Автоматически скрываем через 5 секунд
-      setTimeout(() => {
-        notification.style.opacity = "0";
-        setTimeout(() => {
-          if (notification.parentNode) {
-            notification.remove();
-          }
-        }, 300);
-      }, 5000);
+      document.body.appendChild(notification);
+
+      notificationTimeout = setTimeout(() => {
+        notification.style.animation = "slideOutRight 0.3s ease";
+        setTimeout(() => notification.remove(), 300);
+      }, 4000);
     }
 
-    // Обработчик отправки формы
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       if (validateForm()) {
-        // Здесь можно отправить данные на сервер через fetch
-        console.log("Форма валидна, данные:", {
-          name: nameInput?.value,
-          email: emailInput?.value,
-          phone: phoneInput?.value,
-          message: messageInput?.value,
+        console.log("Отправка данных:", {
+          name: fields.name?.value,
+          email: fields.email?.value,
+          phone: fields.phone?.value,
+          message: fields.message?.value,
         });
-
         resetForm();
+        showNotification("Сообщение успешно отправлено!");
       } else {
-        showNotification("Пожалуйста, исправьте ошибки в форме", "error");
-
-        // Прокручиваем к первому полю с ошибкой
-        const firstInvalid = form.querySelector(".invalid");
+        const firstInvalid = Object.values(fields).find(
+          (input) => input && input.classList.contains("invalid"),
+        );
         if (firstInvalid) {
           firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+          firstInvalid.focus();
         }
+        showNotification("Пожалуйста, исправьте ошибки в форме", true);
       }
     });
 
-    // Сохранение данных при вводе (автосохранение)
-    const saveInputs = [nameInput, emailInput, phoneInput, messageInput];
-    saveInputs.forEach((input) => {
-      if (input) {
-        input.addEventListener("input", function () {
-          saveFormData();
+    for (const input of Object.values(fields)) {
+      if (!input) continue;
+      input.addEventListener("input", () => {
+        validateField(input);
+        saveToStorage();
+      });
+      input.addEventListener("blur", () => validateField(input));
+      input.addEventListener("focus", () => clearError(input));
+    }
 
-          // Валидация в реальном времени
-          if (input.hasAttribute("required") || input.value.trim() !== "") {
-            validateField(input);
-          } else {
-            clearError(input);
-          }
-        });
-      }
-    });
-
-    // Валидация при потере фокуса
-    const blurInputs = [nameInput, emailInput, messageInput];
-    blurInputs.forEach((input) => {
-      if (input) {
-        input.addEventListener("blur", function () {
-          if (input.hasAttribute("required") || input.value.trim() !== "") {
-            validateField(input);
-          } else {
-            clearError(input);
-          }
-        });
-      }
-    });
-
-    // Загружаем сохранённые данные при загрузке страницы
-    loadFormData();
+    loadFromStorage();
   });
 })();
