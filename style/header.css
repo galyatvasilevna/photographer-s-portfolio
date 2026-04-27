@@ -62,8 +62,8 @@
     text-align: center;
     border: none;
     border-radius: 10px;
-    color: #212529;
-    background-color: #fff;
+    color: var(--color-text);
+    background-color: var(--background-color);
     padding: 20px 32px;
     margin-top: 8px;
     cursor: pointer;
