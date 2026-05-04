@@ -11,7 +11,7 @@
         filterSettings,
       );
       const modal = new Modal("#imageModal", gallery);
-      const formValidator = new FormValidator(".form", storage); // убрали ContactMessage
+      const formValidator = new FormValidator(".form", storage);
       const scrollManager = new ScrollManager(".aside");
       const mobileMenu = new MobileMenu(".burger-button", ".aside .menu");
 

@@ -27,7 +27,6 @@ class ThemeSettings {
 
     let effective = theme;
     if (theme === "auto") {
-      // Определяем системную тему
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         effective = "dark";
       } else {

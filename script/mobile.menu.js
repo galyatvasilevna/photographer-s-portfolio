@@ -3,22 +3,34 @@ class MobileMenu {
     this.burgerBtn = document.querySelector(burgerSelector);
     this.menu = document.querySelector(menuSelector);
 
+    // Создаём оверлей и вставляем перед меню
     this.overlay = document.createElement("div");
     this.overlay.className = "menu-overlay";
-    document.body.appendChild(this.overlay);
+    this.menu.parentNode.insertBefore(this.overlay, this.menu);
 
+    // Кнопка бургера
     this.burgerBtn.addEventListener("click", () => this.toggle());
+
+    // Клик по оверлею — закрываем
     this.overlay.addEventListener("click", () => this.close());
 
-    let links = this.menu.querySelectorAll(".menu-list_link");
-    for (let i = 0; i < links.length; i++) {
-      links[i].addEventListener("click", () => {
-        if (this.menu.classList.contains("active")) {
-          this.close();
-        }
-      });
-    }
+    // Клик по ссылке — закрываем и прокручиваем
+    this.menu.addEventListener("click", (e) => {
+      let link = e.target.closest(".menu-list_link");
+      if (!link) return;
 
+      e.preventDefault();
+      let target = document.querySelector(link.getAttribute("href"));
+      this.close();
+
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    });
+
+    // Закрываем на больших экранах
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768 && this.menu.classList.contains("active")) {
         this.close();
@@ -30,12 +42,7 @@ class MobileMenu {
     let isOpen = this.menu.classList.toggle("active");
     this.burgerBtn.classList.toggle("active", isOpen);
     this.overlay.classList.toggle("active", isOpen);
-
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
   }
 
   close() {
