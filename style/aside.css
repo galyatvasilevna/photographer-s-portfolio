@@ -196,6 +196,7 @@
     }
 }
 
+
 @media (max-width: 768px) {
     .burger-button {
         display: flex;
@@ -208,6 +209,7 @@
     }
     
     .menu {
+        display: flex;                    /* ← добавлено: явно показываем меню */
         position: fixed;
         top: 0;
         right: -100%;
@@ -232,6 +234,7 @@
 
     .menu-list_link {
         font-size: 14px;
+        color: var(--color-text-accent);  /* ← добавлено: белый цвет ссылок */
     }
     
     .logo-img {
